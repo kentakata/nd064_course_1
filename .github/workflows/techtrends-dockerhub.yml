@@ -1,0 +1,19 @@
+name: "TechTrends - Package with Docker"
+
+on:
+  push:
+    branches: ['main']
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: docker build
+        run: |
+          cd project
+          docker build -t techtrends .
+          docker tag techtrends kentakata/techtrends
+          docker login -u kentakata -p ${{ secrets.DOCKER_HUB_TOKEN }}
+          docker push kentakata/techtrends:latest
