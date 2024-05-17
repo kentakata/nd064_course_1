@@ -26,10 +26,8 @@ def get_post_count():
     return cnt
 
 def get_connection_count():
-    #connection = get_db_connection()
-    #cnt = connection.execute('SELECT COUNT(*) FROM posts').fetchone()[0]
-    #connection.close()
-    return -1
+    # FIXME: I don't know how to get the db connection count.
+    return 1
 
 # Define the Flask application
 app = Flask(__name__)
