@@ -30,12 +30,12 @@ spec:
         resources:
 {{ toYaml .Values.resources | indent 12 }}
         ports:
-        - containerPort: {{ .Values.image.containerPort }}
+        - containerPort: {{ .Values.containerPort }}
         livenessProbe:
           httpGet:
             path: {{ .Values.livenessProbe.path }}
-            port: {{ .Values.image.containerPort }}
+            port: {{ .Values.containerPort }}
         readinessProbe:
           httpGet:
             path: {{ .Values.readinessProbe.path }}
-            port: {{ .Values.image.containerPort }}
+            port: {{ .Values.containerPort }}
