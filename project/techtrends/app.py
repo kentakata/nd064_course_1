@@ -52,7 +52,7 @@ def post(post_id):
         app.logger.info(f'Article not found!')
         return render_template('404.html'), 404
     else:
-        app.logger.info(f'Article "{post['title']}" retrieved!')
+        app.logger.info(f'''Article "{post['title']}" retrieved!''')
         return render_template('post.html', post=post)
 
 # Define the About Us page
